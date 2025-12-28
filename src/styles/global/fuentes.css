@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Futura-Medium';
+    src: url('/fonts/Futura.woff') format('woff'), url('/fonts/Futura.ttf') format('ttf');
+    font-weight: 400;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('/fonts/subset-Futura-Bold.woff2') format('woff2'), url('/fonts/subset-Futura-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+.light-text {
+    font-family: 'Futura-Medium', sans-serif;
+    font-weight: 400;
+}
+
+.bold-text {
+    font-family: 'Futura', sans-serif;
+    font-weight: 700;
+}

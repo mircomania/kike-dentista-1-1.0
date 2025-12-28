@@ -1,0 +1,30 @@
+export const navLinks = [
+    { id: 'home', to: '/', label: 'Home', label2: 'Home', title: 'Ir al inicio', dataLink: 'navbar-inicio-link', dataLink2: 'footer-inicio-link' },
+    {
+        id: 'servicios',
+        to: '#section2',
+        label: 'Servicios',
+        label2: 'Servicios',
+        title: 'Conoce los servicios de tu Gran Evento',
+        dataLink: 'navbar-servicios-link',
+        dataLink2: 'footer-servicios-link',
+    },
+    {
+        id: 'nosotros',
+        to: '#section3',
+        label: 'Nosotros',
+        label2: 'Nosotros',
+        title: 'Conoce a los creadores de tu Gran Evento',
+        dataLink: 'navbar-nosotros-link',
+        dataLink2: 'footer-nosotros-link',
+    },
+    {
+        id: 'contacto',
+        to: '#section4',
+        label: 'Contacto',
+        label2: 'Contacto',
+        title: 'Contactate con tu Gran Evento',
+        dataLink: 'navbar-contacto-link',
+        dataLink2: 'footer-contacto-link',
+    },
+];
