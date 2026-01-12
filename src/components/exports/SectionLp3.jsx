@@ -1,9 +1,9 @@
 import styles from '../../styles/modules/sectionLp1.module.css';
 
-export const SectionLp1 = () => {
+export const SectionLp3 = () => {
     return (
         <section className={styles.sectionContainer}>
-            <h1 className="futura-light">INICIO</h1>
+            <h1 className="futura-light">NOSOTROS</h1>
         </section>
     );
 };
