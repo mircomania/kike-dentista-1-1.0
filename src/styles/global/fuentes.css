@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Futura-Medium';
-    src: url('/fonts/Futura.woff2') format('woff'), url('/fonts/Futura.woff') format('woff');
+    src: url('/fonts/Futura.ttf') format('ttf'), url('/fonts/Futura.woff') format('woff');
     font-weight: 400;
     font-weight: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Abigral';
-    src: url('/fonts/Abigral.woff2') format('woff2'), url('/fonts/Abigral.woff') format('woff');
+    src: url('/fonts/Abigral.ttf') format('ttf'), url('/fonts/Abigral.woff') format('woff');
     font-style: normal;
     font-display: swap;
 }

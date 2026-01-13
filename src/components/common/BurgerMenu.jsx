@@ -3,6 +3,7 @@ import logo from '../../assets/images/logo-negro-bi-2.png';
 
 import { NavLinks } from '../../utils/NavLinks';
 import { NavItems } from '../../utils/NavItems';
+import { Redes } from '../../utils/Redes';
 import { useBurgerMenu } from '../../hooks/useBurgerMenu';
 
 export const BurgerMenu = () => {
@@ -22,7 +23,7 @@ export const BurgerMenu = () => {
 
             {/* MENÚ */}
             <div id="mobile-menu" className={`mobile-nav-menu ${isOpen ? 'open' : ''}`}>
-                <ul className="burger-menu-nav futura-light">
+                <ul className="burger-menu-nav abigral-light">
                     {NavLinks.map((item) => (
                         <li key={item.id} className="link-container">
                             <NavItems
@@ -35,7 +36,12 @@ export const BurgerMenu = () => {
                     ))}
                 </ul>
 
-                <img src={logo} alt="Logotipo de Doctora Stefany Quintero Ortodoncia" loading="lazy" decoding="async" />
+                {/* REDES Y LOGO */}
+                <div className="burger-redes-container">
+                    <Redes dataLinkPrefix="navbar" />
+
+                    <img className="logo-burger" src={logo} alt="Logotipo de Doctora Stefany Quintero Ortodoncia" loading="lazy" decoding="async" />
+                </div>
             </div>
         </nav>
     );

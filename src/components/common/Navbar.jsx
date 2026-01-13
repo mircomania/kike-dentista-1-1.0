@@ -8,11 +8,12 @@ import { useNavActions } from '../../hooks/useNavActions';
 import { BurgerMenu } from './BurgerMenu';
 import { NavLinks } from '../../utils/NavLinks';
 import { NavItems } from '../../utils/NavItems';
+import { Redes } from '../../utils/Redes';
 
 export const Navbar = () => {
     const { handleNavigation } = useNavActions();
     const [isScrolled, setIsScrolled] = useState(false);
-    const isMobile = useMediaQuery('(max-width: 991px)');
+    const isMobile = useMediaQuery('(max-width: 1199px)');
 
     useEffect(() => {
         if (isMobile) {
@@ -33,17 +34,23 @@ export const Navbar = () => {
                 </a>
 
                 {!isMobile && (
-                    <ul className="menu-nav futura-light">
-                        {NavLinks.map((item) => (
-                            <li key={item.id}>
-                                <NavItems
-                                    item={item}
-                                    dataLink={`footer-${item.id}-link`}
-                                    dataCta={item.id === 'contacto' ? 'footer-contacto-link' : undefined}
-                                />
-                            </li>
-                        ))}
-                    </ul>
+                    <>
+                        <ul className={`menu-nav ${isScrolled ? 'abigral-light' : 'abigral-bold'}`}>
+                            {NavLinks.map((item) => (
+                                <li key={item.id}>
+                                    <NavItems
+                                        item={item}
+                                        dataLink={`navbar-${item.id}-link`}
+                                        dataCta={item.id === 'contacto' ? 'navbar-contacto-link' : undefined}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="navbar-redes-container">
+                            <Redes dataLinkPrefix="navbar" />
+                        </div>
+                    </>
                 )}
             </nav>
 
