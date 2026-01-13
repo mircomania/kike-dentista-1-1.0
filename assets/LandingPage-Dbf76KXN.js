@@ -1,1 +1,0 @@
-import{j as o,u as n,r}from"./index-DIQBVxtX.js";const c=()=>o.jsx("section",{children:o.jsx("h1",{children:"hola"})}),i=()=>{const t=n();return r.useEffect(()=>{if(t.hash){const e=document.querySelector(t.hash);if(e){const s=e.offsetTop;window.scrollTo({top:s,behavior:"smooth"})}}},[t]),o.jsx("main",{children:o.jsx(c,{})})};export{i as default};
