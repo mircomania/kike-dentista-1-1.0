@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/common/Navbar';
 import { Cargando } from './utils/Cargando';
 import { ScrollToTop } from './hooks/ScrollTop';
+import { Footer } from './components/common/Footer';
 
 const LandingPage = lazy(() => import('./components/pages/LandingPage'));
 
@@ -17,6 +18,18 @@ function App() {
 
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        if (loading) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [loading]);
 
     return (
         <BrowserRouter basename="kike-dentista-1-1.0">
@@ -41,6 +54,8 @@ function App() {
                     </Routes>
                 </Suspense>
             )}
+
+            <Footer />
         </BrowserRouter>
     );
 }

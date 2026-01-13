@@ -24,6 +24,7 @@
     position: fixed;
     z-index: 100;
     background-color: transparent;
+    border: none;
     transition: background-color 1s ease;
     border-top-left-radius: 15px;
     top: 0;

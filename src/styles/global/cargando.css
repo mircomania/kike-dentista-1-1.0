@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 80px;
 }
 
 .cargando-container img {
@@ -47,25 +48,25 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: calc(100vh - 295px);
+    min-height: calc(100vh - 226px);
     background-color: var(--white-color);
     overflow: hidden;
 }
 
 @media (min-width: 576px) {
     .cargando {
-        min-height: calc(100vh - 210px);
+        min-height: calc(100vh - 163px);
     }
 }
 
 @media (min-width: 1200px) {
     .cargando {
-        min-height: calc(100vh - 220px);
+        min-height: calc(100vh - 185px);
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     .cargando {
-        min-height: calc(100vh - 260px);
+        min-height: calc(100vh - 191px);
     }
 }
