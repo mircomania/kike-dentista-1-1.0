@@ -3,5 +3,46 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100svh;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    gap: 20px;
+}
+
+.sectionContainer img {
+    width: 360px;
+}
+
+.formContainer {
+    width: 360px;
+}
+
+@media (min-width: 768px) {
+    .sectionContainer {
+        flex-direction: row-reverse;
+        align-items: start;
+    }
+}
+
+@media (min-width: 992px) {
+    .formContainer {
+        width: 550px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sectionContainer {
+        padding-top: 180px;
+        padding-bottom: 80px;
+        gap: 220px;
+    }
+
+    .sectionContainer img {
+        width: 400px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .formContainer {
+        width: 600px;
+    }
 }

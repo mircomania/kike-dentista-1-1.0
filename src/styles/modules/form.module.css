@@ -1,0 +1,91 @@
+.form {
+    position: relative;
+    z-index: 1;
+    color: var(--dark-color);
+    border: solid;
+    border-radius: 5px;
+    border-color: var(--dark-color);
+    padding-bottom: 60px;
+}
+
+.inputsContainer {
+    padding: 20px 30px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.inputContainer select,
+.inputContainer input,
+.inputContainer textarea {
+    border: solid;
+    border-color: var(--dark-color);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.inputContainer label {
+    margin-bottom: 10px;
+    margin-left: 2px;
+    font-size: 16px;
+}
+
+.input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: 'Alliance No.2', sans-serif;
+    border-radius: 5px;
+    padding: 4px 0;
+    margin-bottom: 15px;
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    border: none;
+    font-size: 16px;
+    resize: none;
+    padding-left: 50px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.labelError {
+    color: red;
+}
+
+.contentEnvio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.mensajeErrorGeneral {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.mensajeErrorGeneral p {
+    position: absolute;
+    z-index: 1;
+    color: var(--dark-color);
+    margin-top: 5px;
+}
+
+@media (min-width: 1400px) {
+    .inputContainer label {
+        font-size: 16px;
+    }
+
+    .input {
+        padding: 5px 0;
+        font-size: 18px;
+        height: 45px;
+    }
+}

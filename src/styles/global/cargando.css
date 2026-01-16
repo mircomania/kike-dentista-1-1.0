@@ -48,7 +48,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: calc(100vh - 226px);
+    min-height: calc(100vh - 290px);
     background-color: var(--white-color);
     overflow: hidden;
 }

@@ -45,12 +45,12 @@ export const useForm = (initialState, submitCallback) => {
     const showAlert = (title, message, icon, color) => {
         Swal.fire({
             title,
-            html: `<div class="light-text"><p>${message}</p></div>`,
+            html: `<div class="futura-light"><p>${message}</p></div>`,
             icon,
             confirmButtonColor: color,
             scrollbarPadding: false,
             customClass: {
-                title: 'bold-text',
+                title: 'futura-bold',
             },
             willOpen: () => {
                 document.body.style.overflow = 'auto';
@@ -91,14 +91,6 @@ export const useForm = (initialState, submitCallback) => {
 
         validateTelefono(newErrors);
 
-        validateEmpresa(newErrors);
-
-        validateRol(newErrors);
-
-        validateEquipo(newErrors);
-
-        validateTool(newErrors);
-
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -127,30 +119,6 @@ export const useForm = (initialState, submitCallback) => {
         }
     };
 
-    const validateEmpresa = (newErrors) => {
-        if (!formData.empresa.trim()) {
-            newErrors.empresa = true;
-        }
-    };
-
-    const validateRol = (newErrors) => {
-        if (!formData.rol.trim()) {
-            newErrors.rol = true;
-        }
-    };
-
-    const validateEquipo = (newErrors) => {
-        if (!formData.equipo.trim() || formData.equipo === 'Selecciona una cantidad') {
-            newErrors.equipo = true;
-        }
-    };
-
-    const validateTool = (newErrors) => {
-        if (!formData.tool.trim() || formData.tool === 'Selecciona una opción') {
-            newErrors.tool = true;
-        }
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validateForm()) return;
@@ -164,14 +132,11 @@ export const useForm = (initialState, submitCallback) => {
                 nombre: formData.nombre,
                 telefono: formData.telefono,
                 email: formData.email,
-                empresa: formData.empresa,
-                rol: formData.rol,
-                equipo: formData.equipo,
-                tool: formData.tool,
+                comentario: formData.comentario,
                 ...utmWithoutTimestamp,
             };
-            //'http://localhost:5000/submit'
-            const response = await fetch('http://localhost:5000/api/submit', {
+            //'http://localhost:5000/submit | http://localhost:5000/api/submit'
+            const response = await fetch('http://localhost:5000/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formDataToSend),
@@ -198,8 +163,6 @@ export const useForm = (initialState, submitCallback) => {
         setFormData({
             ...initialState,
             telefono: '+52',
-            equipo: '',
-            tool: '',
         });
         setErrors({});
     };

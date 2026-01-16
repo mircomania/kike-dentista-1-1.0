@@ -7,6 +7,7 @@ import { ScrollToTop } from './hooks/ScrollTop';
 import { Footer } from './components/common/Footer';
 
 const LandingPage = lazy(() => import('./components/pages/LandingPage'));
+const PoliticasPage = lazy(() => import('./components/pages/PoliticasPage'));
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -51,6 +52,7 @@ function App() {
                 >
                     <Routes>
                         <Route path="/" element={<LandingPage />}></Route>
+                        <Route path="/politica-privacidad" element={<PoliticasPage />}></Route>
                     </Routes>
                 </Suspense>
             )}
