@@ -1,8 +1,9 @@
-import img1 from '../assets/images/logo-negro-bi-3.png';
-import img2 from '../assets/images/logo-negro-bi-3.png';
-import img3 from '../assets/images/logo-negro-bi-3.png';
-import img4 from '../assets/images/logo-negro-bi-3.png';
-import img5 from '../assets/images/logo-negro-bi-3.png';
+import img1 from '../assets/images/img-section-2-1.png';
+import img2 from '../assets/images/img-section-2-2.png';
+import img3 from '../assets/images/img-section-2-3.png';
+import img4 from '../assets/images/img-section-2-4.png';
+import img5 from '../assets/images/img-section-2-5.png';
+import img6 from '../assets/images/img-section-2-6.png';
 
 export const ListaServiciosLp = [
     {
@@ -39,6 +40,14 @@ export const ListaServiciosLp = [
         titulo: 'Odontopediatría',
         texto: 'Atención dental especializada para bebés, niños y adolescentes. Promueve hábitos saludables desde temprana edad y cuida el desarrollo correcto de los dientes.',
         img: img5,
+        alt: 'icono',
+    },
+
+    {
+        id: 6,
+        titulo: 'Y más...',
+        texto: '',
+        img: img6,
         alt: 'icono',
     },
 ];

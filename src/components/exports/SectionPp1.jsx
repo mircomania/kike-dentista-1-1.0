@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { BotonNav } from '../../utils/BotonNav';
 
 const POLITICAS_LINK = (
-    <NavLink to="/" title="ir a flipinmobiliaria.com.mx" data-link="politicas-home-link">
+    <NavLink to="/" title="ir a doctoratefy.com.mx" data-link="politicas-home-link">
         Stefany Quintero Ortodoncia
     </NavLink>
 );
@@ -20,7 +20,7 @@ export const SectionPp1 = () => {
 
                 <h1 className="abigral-bold">Política de privacidad</h1>
 
-                <h2 className="abigral-bold">flipinmobiliaria.com.mx</h2>
+                <h2 className="abigral-bold">doctoratefy.com.mx</h2>
             </header>
 
             <div className={`${styles.sectionContenido} futura-light`}>

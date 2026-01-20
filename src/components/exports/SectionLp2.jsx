@@ -10,8 +10,8 @@ export const SectionLp2 = () => {
             </header>
 
             <div className={styles.serviciosContainer}>
-                {ListaServiciosLp.map((servicio) => (
-                    <div key={servicio.id} className={styles.servicio}>
+                {ListaServiciosLp.map((servicio, index) => (
+                    <div key={servicio.id} className={`${styles.servicio} ${styles[`servicio${index + 1}`]}`}>
                         <img src={servicio.img} alt={servicio.alt} />
 
                         <h3 className="abigral-bold">{servicio.titulo}</h3>

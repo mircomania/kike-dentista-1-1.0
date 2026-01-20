@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.methodlab.mx/sitemap.xml
+Sitemap: https://doctoratefy.com.mx/sitemap.xml

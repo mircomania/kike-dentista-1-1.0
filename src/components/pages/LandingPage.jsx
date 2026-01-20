@@ -1,3 +1,5 @@
+import { TitleSEO } from '../../utils/TitleSEO';
+
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -24,6 +26,12 @@ const LandingPage = () => {
 
     return (
         <main>
+            <TitleSEO
+                title="Doctora Stefany Quintero | Ortodoncia"
+                description="Consultorio dental en Monterrey con atención integral, ortodoncia y tratamientos especializados, enfocados en salud, estética y bienestar."
+                canonical="https://doctoratefy.com.mx/"
+            />
+
             <SectionLp1 />
 
             <section id="servicios">

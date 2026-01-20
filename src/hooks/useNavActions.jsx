@@ -13,7 +13,7 @@ export const useNavActions = () => {
         const el = document.querySelector(hash);
         if (!el) return;
 
-        const offset = 80;
+        const offset = 50;
         const y = el.getBoundingClientRect().top + window.scrollY - offset;
 
         window.scrollTo({ top: y, behavior: 'smooth' });

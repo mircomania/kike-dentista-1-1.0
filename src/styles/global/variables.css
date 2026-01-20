@@ -1,6 +1,8 @@
 :root {
     --dark-color: #112c43;
+    --dark-color-2: rgba(17, 44, 67, 0.4);
     --white-color: #f2f2f2;
+    --white-color-2: rgba(242, 242, 242, 0.2);
     --gray-color: #bccad8;
     --blue-color: #bccad8;
     --red-color: #e4d5d3;
