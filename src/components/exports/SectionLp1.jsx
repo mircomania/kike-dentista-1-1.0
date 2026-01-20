@@ -1,6 +1,6 @@
 import styles from '../../styles/modules/sectionLp1.module.css';
 
-import img from '../../assets/images/img-section-lp-1.png';
+import img from '../../assets/images/img-section-lp-1.webp';
 
 import { Form } from '../form/Form';
 

@@ -1,4 +1,4 @@
-import logo from '../assets/images/logo-negro-bi-3.png';
+import logo from '../assets/images/logo-negro-bi-3.webp';
 
 export const Cargando = () => {
     return (

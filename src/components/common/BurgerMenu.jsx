@@ -1,5 +1,5 @@
 import { BurgerIcon } from '../../assets/icons/BurgerIcon';
-import logo from '../../assets/images/logo-negro-bi-2.png';
+import logo from '../../assets/images/logo-negro-bi-2.webp';
 
 import { NavLinks } from '../../utils/NavLinks';
 import { NavItems } from '../../utils/NavItems';

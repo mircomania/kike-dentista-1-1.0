@@ -1,15 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
-import { PhoneNumberUtil } from 'google-libphonenumber';
-import Swal from 'sweetalert2';
+let SwalPromise;
 
-export const useForm = (initialState, submitCallback) => {
+const loadSwal = () => {
+    if (!SwalPromise) {
+        SwalPromise = import('sweetalert2').then((m) => m.default);
+    }
+    return SwalPromise;
+};
+
+export const useForm = (initialState, { onSuccess = () => {}, onError = () => {} } = {}) => {
     const [formData, setFormData] = useState(initialState);
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [utmParams, setUtmParams] = useState({});
-
-    const phoneUtil = PhoneNumberUtil.getInstance();
 
     useEffect(() => {
         const DAYS_TO_EXPIRE = 15;
@@ -42,8 +46,10 @@ export const useForm = (initialState, submitCallback) => {
         }
     }, []);
 
-    const showAlert = (title, message, icon, color) => {
-        Swal.fire({
+    const showAlert = useCallback(async (title, message, icon, color) => {
+        const Swal = await loadSwal();
+
+        await Swal.fire({
             title,
             html: `<div class="futura-light"><p>${message}</p></div>`,
             icon,
@@ -59,26 +65,16 @@ export const useForm = (initialState, submitCallback) => {
                 document.body.style.overflow = 'auto';
             },
         });
-    };
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
 
-        if (name === 'telefono') {
-            setFormData((prev) => ({ ...prev, telefono: value }));
-        } else {
-            setFormData((prev) => ({ ...prev, [name]: value }));
-        }
-
-        setErrors((prev) => {
-            return Object.fromEntries(Object.entries(prev).filter(([key]) => key !== name));
-        });
-    };
-
-    const updateField = (name, value) => {
         setFormData((prev) => ({ ...prev, [name]: value }));
+
         setErrors((prev) => {
-            return Object.fromEntries(Object.entries(prev).filter(([key]) => key !== name));
+            const { [name]: removed, ...rest } = prev;
+            return rest;
         });
     };
 
@@ -109,12 +105,9 @@ export const useForm = (initialState, submitCallback) => {
     };
 
     const validateTelefono = (newErrors) => {
-        try {
-            const number = phoneUtil.parse(formData.telefono);
-            if (!phoneUtil.isValidNumber(number)) {
-                newErrors.telefono = true;
-            }
-        } catch (e) {
+        const isValidPhone = /^\+(52|1)\d{10}$/.test(formData.telefono);
+
+        if (!isValidPhone) {
             newErrors.telefono = true;
         }
     };
@@ -147,13 +140,13 @@ export const useForm = (initialState, submitCallback) => {
             if (response.ok) {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({ event: 'formulario_enviado' });
-                submitCallback(true, data);
+                onSuccess(data);
                 resetForm();
             } else {
-                submitCallback(false, data);
+                onError(data);
             }
         } catch (error) {
-            submitCallback(false, error);
+            onError(false, error);
         } finally {
             setLoading(false);
         }
@@ -164,8 +157,7 @@ export const useForm = (initialState, submitCallback) => {
             ...initialState,
             telefono: '+52',
         });
-        setErrors({});
     };
 
-    return { formData, errors, loading, handleChange, updateField, handleSubmit, showAlert };
+    return { formData, errors, loading, handleChange, handleSubmit, showAlert };
 };

@@ -52,7 +52,6 @@
         position: absolute;
         z-index: 2;
         bottom: 0;
-        width: 350px;
     }
 }
 
@@ -61,7 +60,6 @@
         padding-top: 180px;
         padding-bottom: 80px;
         padding-right: 100px;
-        gap: 20px;
     }
 
     .sectionContenido img {
@@ -74,10 +72,6 @@
 
     .sectionContenido h2 {
         font-size: 24px;
-    }
-
-    .sectionContenido p {
-        font-size: 16px;
     }
 
     .formContainer {

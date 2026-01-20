@@ -1,6 +1,6 @@
-import logoIg from '../assets/images/logo-ig.png';
-import LogoTiktok from '../assets/images/logo-tiktok.png';
-import LogoFace from '../assets/images/logo-face.png';
+import logoIg from '../assets/images/logo-ig.webp';
+import LogoTiktok from '../assets/images/logo-tiktok.webp';
+import LogoFace from '../assets/images/logo-face.webp';
 
 export const RedesData = [
     {

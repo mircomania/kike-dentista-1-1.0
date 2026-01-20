@@ -1,4 +1,4 @@
-import logo from '../../assets/images/logo-negro-bi-2.png';
+import logo from '../../assets/images/logo-negro-bi-2.webp';
 import { NavLink } from 'react-router-dom';
 
 import { NavLinks } from '../../utils/NavLinks';

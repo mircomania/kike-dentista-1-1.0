@@ -1,6 +1,6 @@
 import styles from '../../styles/modules/sectionLp3.module.css';
 
-import img from '../../assets/images/img-section-lading-1.jpg';
+import img from '../../assets/images/img-section-lading-1.webp';
 
 import { TextosNosotrosLp } from '../../utils/TextosNosotrosLp';
 

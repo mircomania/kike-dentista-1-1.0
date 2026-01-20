@@ -41,7 +41,12 @@ export const SectionLp4 = () => {
                 />
 
                 <p className="futura-light">
-                    <a href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`} target="_blank" rel="noopener noreferrer">
+                    <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-link="home-map-link"
+                    >
                         Abrir en Google Maps
                     </a>
                 </p>

@@ -9,15 +9,6 @@ import { Spinner } from '../../assets/icons/Spinner';
 import PhoneInput from 'react-phone-input-2';
 
 export const Form = () => {
-    const [hideErrorOnFocus, setHideErrorOnFocus] = useState({});
-
-    const handleFocusRemoveError = (field) => {
-        setHideErrorOnFocus((prev) => ({
-            ...prev,
-            [field]: true,
-        }));
-    };
-
     const [showPhoneUI, setShowPhoneUI] = useState(false);
 
     const { formData, errors, loading, handleChange, handleSubmit, showAlert } = useForm(
@@ -27,13 +18,11 @@ export const Form = () => {
             email: '',
             comentario: '',
         },
-        (success, data) => {
-            if (success) {
-                showAlert('Excelente', 'Datos enviados correctamente.<br>Pronto nos pondremos en contacto contigo.', 'success', '#112c43');
-            } else {
-                showAlert('Ups', 'Hubo un error al enviar los datos.', 'error', '#ac3150');
-            }
-        }
+        {
+            onSuccess: () =>
+                showAlert('Excelente', 'Datos enviados correctamente.<br>Pronto nos pondremos en contacto contigo.', 'success', '#112c43'),
+            onError: () => showAlert('Ups', 'Hubo un error al enviar los datos.', 'error', '#ac3150'),
+        },
     );
 
     return (
@@ -66,13 +55,12 @@ export const Form = () => {
                         value={formData.telefono}
                         onFocus={() => {
                             setShowPhoneUI(true);
-                            handleFocusRemoveError('telefono');
                         }}
                         onChange={(phone) => {
                             const formatted = phone ? `+${phone}` : '';
                             handleChange({ target: { name: 'telefono', value: formatted } });
                         }}
-                        inputClass={`${styles.input} ${errors.telefono && !hideErrorOnFocus.telefono ? styles.errorInput : ''}`}
+                        inputClass={`${styles.input} ${errors.telefono ? styles.errorInput : ''}`}
                         containerClass={showPhoneUI ? 'phone-visible' : 'phone-hidden'}
                         inputProps={{
                             name: 'telefono',

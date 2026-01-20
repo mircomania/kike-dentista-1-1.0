@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import logo from '../../assets/images/logo-negro-bi-1.png';
+import logo from '../../assets/images/logo-negro-bi-1.webp';
 
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useNavActions } from '../../hooks/useNavActions';

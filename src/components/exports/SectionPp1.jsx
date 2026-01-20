@@ -1,6 +1,6 @@
 import styles from '../../styles/modules/politicasPage.module.css';
 
-import logo from '../../assets/images/logo-negro-bi-2.png';
+import logo from '../../assets/images/logo-negro-bi-2.webp';
 
 import { NavLink } from 'react-router-dom';
 
@@ -102,7 +102,7 @@ export const SectionPp1 = () => {
                 className="boton-2"
                 ariaLabel="Ir a la página de inicio"
                 title="Haz clic para ir a la página de inicio"
-                dataLink="polilicas-home-btn"
+                dataLink="politicas-home-btn"
             >
                 IR AL INICIO
             </BotonNav>
