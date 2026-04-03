@@ -105,6 +105,7 @@ export const Form = () => {
                         value={formData.comentario}
                         onChange={handleChange}
                         rows="5"
+                        maxLength={250}
                     />
                 </div>
             </div>

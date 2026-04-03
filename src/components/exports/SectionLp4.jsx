@@ -11,7 +11,8 @@ export const SectionLp4 = () => {
                     <h2 className="abigral-bold">Dirección</h2>
 
                     <p className="futura-light">
-                        Edificio Delta, Piso 5, Consultorio 502 <br /> Calle Del Hospital, Sertoma, <br /> C.P 64718 <br /> Monterrey, N.L.
+                        Edificio Delta, Piso 5, Consultorio 502 <br /> Calle Del Hospital, Sertoma, <br /> C.P 64718 <br /> Monterrey, N.L. <br /> +52
+                        81 2879 7121
                     </p>
                 </div>
 
@@ -19,11 +20,11 @@ export const SectionLp4 = () => {
                     <h2 className="abigral-bold">Horarios de Atención</h2>
 
                     <p>
-                        Lunes a Viernes <br /> 9:00 a.m. a 6:00 p.m.
+                        Lunes a Viernes <br /> 10:00 a.m. a 7:00 p.m.
                     </p>
 
                     <p>
-                        Sábados <br /> 9:00 a.m. a 1:00 p.m.
+                        Sábados <br /> 10:00 a.m. a 3:00 p.m.
                     </p>
                 </div>
             </div>

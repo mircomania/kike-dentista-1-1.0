@@ -14,6 +14,11 @@
     font-size: 32px;
 }
 
+.sectionContainer p {
+    font-size: 16px;
+    color: var(--white-color);
+}
+
 .serviciosContainer {
     display: flex;
     flex-wrap: wrap;
@@ -53,10 +58,6 @@
     font-size: 16px;
 }
 
-/* .servicio6 {
-    justify-content: center;
-} */
-
 @media (min-width: 768px) {
     .serviciosContainer {
         width: 760px;
@@ -74,6 +75,11 @@
         font-size: 42px;
     }
 
+    .sectionContainer p,
+    .servicio p {
+        font-size: 18px;
+    }
+
     .serviciosContainer {
         width: 1220px;
         gap: 20px;
@@ -82,10 +88,6 @@
     .servicio {
         width: 380px;
         height: 300px;
-    }
-
-    .servicio p {
-        font-size: 18px;
     }
 }
 

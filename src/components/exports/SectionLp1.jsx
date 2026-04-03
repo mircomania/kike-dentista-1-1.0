@@ -9,11 +9,11 @@ export const SectionLp1 = () => {
         <section className={styles.sectionContainer}>
             <div className={styles.sectionContenido}>
                 <div className={styles.sectionTexto}>
-                    <h1 className="abigral-bold">Odontología</h1>
+                    <h1 className="abigral-bold">Ortodoncia</h1>
 
                     <h2 className="futura-light">Dra. Stefany Quintero</h2>
 
-                    <p className="futura-light">Atención enfocada en prevención, estética dental y bienestar integral del paciente.</p>
+                    <p className="futura-light">Odontología más allá de los dientes, enfocada al bienestar integral del paciente.</p>
                 </div>
 
                 <img src={img} alt="Doctora Stefany Quintero" />

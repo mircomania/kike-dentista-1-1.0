@@ -84,4 +84,8 @@
         font-size: 18px;
         height: 45px;
     }
+
+    .inputContainer textarea {
+        height: 100px;
+    }
 }

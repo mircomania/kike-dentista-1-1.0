@@ -6,7 +6,7 @@ export const SectionLp2 = () => {
     return (
         <section className={styles.sectionContainer}>
             <header>
-                <h2 className="abigral-bold">Especialidades</h2>
+                <h2 className="abigral-bold">Servicios </h2>
             </header>
 
             <div className={styles.serviciosContainer}>
