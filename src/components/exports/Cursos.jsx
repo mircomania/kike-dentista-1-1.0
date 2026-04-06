@@ -1,8 +1,6 @@
 import styles from '../../styles/modules/cursos.module.css';
 import { useEffect, useState, useRef, useMemo } from 'react';
 
-import { useMediaQuery } from '../../hooks/useMediaQuery';
-
 export const Cursos = () => {
     const [cursos, setCursos] = useState([]);
     const [current, setCurrent] = useState(0);
@@ -10,8 +8,6 @@ export const Cursos = () => {
     const [loading, setLoading] = useState(true);
 
     const timeoutRef = useRef(null);
-
-    const isMobile = useMediaQuery('(min-width: 1199px)');
 
     useEffect(() => {
         const fetchCursos = async () => {
@@ -78,7 +74,7 @@ export const Cursos = () => {
     return (
         <div className={styles.carousel} onMouseEnter={() => setIsPlaying(false)} onMouseLeave={() => setIsPlaying(true)}>
             <button onClick={prev} aria-label="Anterior">
-                ◀
+                ‹
             </button>
 
             <div className={styles.track}>
@@ -90,12 +86,21 @@ export const Cursos = () => {
                     if (position === 0) positionClass = styles.center;
                     if (position === 1) positionClass = styles.right;
 
-                    return <img key={curso.url} src={curso.url} alt="Curso" className={`${styles.slide} ${positionClass}`} />;
+                    return (
+                        <img
+                            key={curso.curso}
+                            src={curso.url}
+                            alt={curso.curso}
+                            className={`${styles.slide} ${positionClass}`}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    );
                 })}
             </div>
 
             <button onClick={next} aria-label="Siguiente">
-                ▶
+                ›
             </button>
         </div>
     );
