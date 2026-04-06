@@ -1,0 +1,52 @@
+const fs = require('fs');
+const path = require('path');
+
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+const BASE_ID = process.env.AIRTABLE_GET_BASE_ID;
+const TABLE_NAME = process.env.AIRTABLE_CURSOS_TABLE_NAME;
+
+const CACHE_PATH = path.join(__dirname, '../cache/cursos.json');
+
+const getCursos = async (req, res) => {
+    try {
+        // 1. Si ya existe el JSON lo devolvemos
+        if (fs.existsSync(CACHE_PATH)) {
+            const data = fs.readFileSync(CACHE_PATH, 'utf-8');
+            return res.json(JSON.parse(data));
+        }
+
+        // Si no existe fetch a Airtable
+        const response = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`, {
+            headers: {
+                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+            },
+        });
+
+        const data = await response.json();
+
+        if (!data.records) {
+            return res.status(500).json({ error: 'Error en Airtable' });
+        }
+
+        const cursos = data.records.map((record) => ({
+            curso: record.fields.curso,
+            url: record.fields.url,
+        }));
+
+        if (!cursos.length) {
+            return res.status(404).json({ error: 'No hay cursos' });
+        }
+
+        // Guardar JSON
+        fs.writeFileSync(CACHE_PATH, JSON.stringify(cursos, null, 2));
+
+        return res.json(cursos);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Error interno del servidor' });
+    }
+};
+
+module.exports = {
+    getCursos,
+};

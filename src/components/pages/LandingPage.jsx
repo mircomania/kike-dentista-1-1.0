@@ -8,6 +8,7 @@ import { SectionLp1 } from '../exports/SectionLp1';
 import { SectionLp2 } from '../exports/SectionLp2';
 import { SectionLp3 } from '../exports/SectionLp3';
 import { SectionLp4 } from '../exports/SectionLp4';
+import { Cursos } from '../exports/Cursos';
 import { SectionLp5 } from '../exports/SectionLp5';
 
 const LandingPage = () => {
@@ -47,6 +48,8 @@ const LandingPage = () => {
             </section>
 
             <SectionLp5 />
+
+            <Cursos />
 
             <section id="contacto">
                 <SectionLp4 />
