@@ -12,7 +12,7 @@ export const Cursos = () => {
     useEffect(() => {
         const fetchCursos = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/cursos');
+                const res = await fetch('/api/cursos');
 
                 if (!res.ok) {
                     throw new Error('Error al obtener cursos');

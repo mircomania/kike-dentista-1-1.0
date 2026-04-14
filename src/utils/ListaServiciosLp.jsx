@@ -21,7 +21,7 @@ export const ListaServiciosLp = [
     {
         id: 3,
         titulo: 'Y mas ...',
-        texto: '',
+        texto: 'Todo lo que tu salud bucal necesita en un solo lugar.',
         img: img3,
         alt: 'icono',
     },

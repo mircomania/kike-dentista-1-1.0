@@ -146,13 +146,19 @@ export const useForm = (initialState, { onSuccess = () => {}, onError = () => {}
                 ...utmWithoutTimestamp,
             };
             //'http://localhost:5000/submit | http://localhost:5000/api/submit'
-            const response = await fetch('http://localhost:5000/api/submit', {
+            const response = await fetch('/api/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formDataToSend),
             });
 
-            const data = await response.json();
+            let data;
+
+            try {
+                data = await response.json();
+            } catch {
+                data = null;
+            }
 
             if (response.ok) {
                 window.dataLayer = window.dataLayer || [];

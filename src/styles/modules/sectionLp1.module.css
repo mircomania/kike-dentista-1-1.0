@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 40px;
+    padding-top: 120px;
     padding-bottom: 60px;
 }
 
@@ -58,7 +58,7 @@
 
 @media (min-width: 1200px) {
     .sectionContainer {
-        padding-top: 60px;
+        padding-top: 180px;
         padding-bottom: 80px;
         padding-right: 100px;
     }

@@ -5,13 +5,17 @@ export const Banner = () => {
     const [banners, setBanners] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/banner')
-            .then((res) => res.json())
-            .then((data) => setBanners(data))
-            .catch((err) => console.error(err));
+        fetch('/api/banner')
+            .then(async (res) => {
+                if (!res.ok) throw new Error('Error en API');
+                return res.json();
+            })
+            .then(setBanners)
+            .catch(console.error);
     }, []);
 
-    if (!banners || banners.length === 0) return null;
+    if (!banners) return null;
+    if (banners.length === 0) return null;
 
     const bannerWeb = banners.find((b) => b.promo === 'web');
     const bannerMovil = banners.find((b) => b.promo === 'movil');
