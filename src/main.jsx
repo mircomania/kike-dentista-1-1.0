@@ -9,7 +9,7 @@ import './index.css';
 import App from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter basename="kike-dentista-1-1.0">
+    <BrowserRouter>
         <HelmetProvider>
             <App />
         </HelmetProvider>
