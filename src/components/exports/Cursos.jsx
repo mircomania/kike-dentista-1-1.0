@@ -1,8 +1,12 @@
 import styles from '../../styles/modules/cursos.module.css';
 import { useEffect, useState, useRef, useMemo } from 'react';
 
+import { Cargando } from '../../utils/Cargando';
+import { ErrorCarga } from '../../utils/ErrorCarga';
+
 export const Cursos = () => {
     const [cursos, setCursos] = useState([]);
+    const [error, setError] = useState(false);
     const [current, setCurrent] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
     const [loading, setLoading] = useState(true);
@@ -22,6 +26,7 @@ export const Cursos = () => {
                 setCursos(data);
             } catch (error) {
                 console.error(error);
+                setError(true);
             } finally {
                 setLoading(false);
             }
@@ -59,8 +64,8 @@ export const Cursos = () => {
         return [cursos[(current - 1 + total) % total], cursos[current], cursos[(current + 1) % total]];
     }, [cursos, current]);
 
-    if (loading) return <div>Cargando cursos...</div>;
-
+    if (loading) return <Cargando />;
+    if (error) return <ErrorCarga />;
     if (!cursos.length) return <div>No hay cursos disponibles</div>;
 
     if (cursos.length === 1) {

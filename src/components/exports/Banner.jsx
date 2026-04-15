@@ -3,17 +3,22 @@ import { useEffect, useState } from 'react';
 
 export const Banner = () => {
     const [banners, setBanners] = useState(null);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         fetch('/api/banner')
             .then(async (res) => {
-                if (!res.ok) throw new Error('Error en API');
+                if (!res.ok) throw new Error();
                 return res.json();
             })
             .then(setBanners)
-            .catch(console.error);
+            .catch((err) => {
+                console.error('Banner error:', err);
+                setError(true);
+            });
     }, []);
 
+    if (error) return null;
     if (!banners) return null;
     if (banners.length === 0) return null;
 
