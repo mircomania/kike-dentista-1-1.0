@@ -1,4 +1,4 @@
-import { isRateLimited } from '../lib/rateLimit';
+import { isRateLimited } from '../lib/rateLimit.js';
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
