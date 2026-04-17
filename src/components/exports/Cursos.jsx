@@ -16,7 +16,7 @@ export const Cursos = () => {
     useEffect(() => {
         const fetchCursos = async () => {
             try {
-                const res = await fetch('/api/cursos');
+                const res = await fetch('backend/cursos.php');
 
                 if (!res.ok) {
                     throw new Error('Error al obtener cursos');

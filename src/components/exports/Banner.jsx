@@ -6,7 +6,7 @@ export const Banner = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch('/api/banner')
+        fetch('backend/banner.php')
             .then(async (res) => {
                 if (!res.ok) throw new Error();
                 return res.json();

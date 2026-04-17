@@ -146,7 +146,7 @@ export const useForm = (initialState, { onSuccess = () => {}, onError = () => {}
                 ...utmWithoutTimestamp,
             };
             //'http://localhost:5000/submit | http://localhost:5000/api/submit'
-            const response = await fetch('/api/submit', {
+            const response = await fetch('backend/submit.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formDataToSend),
