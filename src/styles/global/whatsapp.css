@@ -1,0 +1,26 @@
+.boton-whatsapp {
+    position: fixed;
+    z-index: 98;
+    border: none;
+    cursor: pointer;
+    right: 10px;
+    bottom: 50px;
+}
+
+.icono-whatsapp {
+    width: 40px;
+    height: 40px;
+    color: #25d366;
+}
+
+@media (min-width: 1200px) {
+    .boton-whatsapp {
+        right: 10px;
+        bottom: 70px;
+    }
+
+    .icono-whatsapp {
+        width: 60px;
+        height: 60px;
+    }
+}

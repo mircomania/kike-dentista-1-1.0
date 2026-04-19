@@ -6,6 +6,7 @@ import { Cargando } from './utils/Cargando';
 import { Footer } from './components/common/Footer';
 
 import { ScrollToTop } from './hooks/ScrollTop';
+import { WhatsAppIcon } from './utils/WhatsAppIcon';
 
 const LandingPage = lazy(() => import('./components/pages/LandingPage'));
 const PoliticasPage = lazy(() => import('./components/pages/PoliticasPage'));
@@ -16,6 +17,9 @@ function App() {
             <ScrollToTop />
 
             <Navbar />
+
+            <WhatsAppIcon />
+
             <Suspense
                 fallback={
                     <main className="cargando">
